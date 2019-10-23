@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void pointClip(int XY[][2], int n, int Xmin, int Ymin,int Xmax, int Ymax)
+{
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"..\\bgi");
+	printf("WAP TO IMPLEMENT POINT CLIPPING CONCEPT\n");
+	printf("Vivek Kumar\n 17115091\n 07/09/2019\n");
+	setcolor(9);
+	rectangle(130,130,400,400);
+	setcolor(7);
+	for (int i=0; i<n; i++)
+	{
+	if ( (XY[i][0] >= Xmin) && (XY[i][0] <= Xmax))
+	{
+		if( (XY[i][1] >= Ymin) && (XY[i][1] <= Ymax))
+		putpixel(XY[i][0],XY[i][1],9);
+	}
+	}
+	printf ("Point inside the viewing pane:\n");
+	for (i=0; i<n; i++)
+	{
+		if((XY[i][0] >= Xmin) && (XY[i][0] <= Xmax))
+		{
+			if((XY[i][1] >= Ymin) && (XY[i][1] <= Ymax)) {
+				printf ("[%d, %d] ", XY[i][0], XY[i][1]);
+				circle(XY[i][0],XY[i][1],2);
+				}
+		}
+	}
+	printf ("\nPoint outside the viewing pane:\n");
+	for (i=0; i<n; i++)
+	{
+		if ((XY[i][0] < Xmin) || (XY[i][0] > Xmax))
+			printf ("[%d, %d] ", XY[i][0], XY[i][1]);
+		if ((XY[i][1] < Ymin) || (XY[i][1] > Ymax))
+			printf ("[%d, %d] ", XY[i][0], XY[i][1]);
+	}
+	getch();
+}
+int main()
+{
+	int XY[6][2] = {{10,10}, {250,200}, {350,350},
+					{130,300}, {150,120}, {100,40}};
+
+	int Xmin = 130;
+	int Xmax = 400;
+	int Ymin = 130;
+	int Ymax = 400;
+	pointClip(XY, 6, Xmin, Ymin, Xmax, Ymax);
+	getch();
+	closegraph();
+	return 0;
+}

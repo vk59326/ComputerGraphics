@@ -1,0 +1,72 @@
+#include<conio.h>
+#include <graphics.h>
+#include<dos.h>
+void weiler_polygon_clipping();
+void main()
+{ int gd = DETECT, gm;
+  initgraph(&gd,&gm,"..\\BGI");
+  clrscr();
+  outtextxy(50,80,"Weiler-Atherton Polygon Clipping");
+  cleardevice();
+  setbkcolor(9);
+  weiler_polygon_clipping();
+  getch();
+  closegraph();
+}
+void weiler_polygon_clipping()
+{
+  outtextxy(50,90,"WAP TO IMPLEMENT WEILER-ATHERTON ALGORITHM FOR POLYGON CLIPPING");
+  outtextxy(50,110,"AMIT KUMAR");
+  outtextxy(50,130,"17115010");
+  outtextxy(50,150,"05/09/2019");
+  rectangle(70,240,180,360);
+  delay(11);
+  line(30,310,110,270);
+  delay(1100);
+  line(110,270,100,295);
+  delay(1100);
+  line(100,295,50,330);
+  delay(1100);
+  line(50,330,110,340);
+  delay(1100);
+  line(110,340,30,350);
+  delay(1100);
+  line(30,310,30,350);
+  delay(1100);
+  outtextxy(20,310,"v1");
+  delay(1100);
+  outtextxy(110,270,"v2");
+  delay(1100);
+  outtextxy(105,295,"v3");
+  delay(1100);
+  outtextxy(45,330,"v4");
+  delay(1100);
+  outtextxy(115,340,"v5");
+  delay(1100);
+  outtextxy(20,350,"v6");
+  delay(1100);
+  outtextxy(65,285,"v1'");
+  delay(1100);
+  outtextxy(65,305,"v3'");
+  delay(1100);
+  outtextxy(75,325,"v4'");
+  delay(1100);
+  outtextxy(50,350,"v5'");
+  outtextxy(50,409,"Hit any key to continue...");
+  getch();
+  cleardevice();
+  rectangle(70,240,180,360);
+  setcolor(7);
+  line(70,290,110,270);
+  line(110,270,100,295);
+  line(100,295,70,320);
+  line(70,290,70,320);
+  delay(2000);
+  line(70,330,110,340);
+  line(70,330,110,340);
+  line(110,340,70,350);
+  line(70,330,70,350);
+  setcolor(13);
+  outtextxy(50,409,"Hit any key to continue...");
+  getch();
+}
